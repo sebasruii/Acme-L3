@@ -19,9 +19,9 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="15455746E: Restoy Barrero, Joaquín" action="https://accounts.spotify.com/es-ES/status"/>
-			<acme:menu-suboption code="54172162D:  Pérez Romero, Lucía" action="https://stackoverflow.com/"/>
-			<acme:menu-suboption code="49398962E: Márquez Sierra, María" action="https://www.instagram.com/gravitydusty/?hl=es"/>
+			<acme:menu-suboption code="15455746E: Restoy Barrero, Joaquin" action="https://accounts.spotify.com/es-ES/status"/>
+			<acme:menu-suboption code="54172162D:  Perez Romero, Lucia" action="https://stackoverflow.com/"/>
+			<acme:menu-suboption code="49398962E: Marquez Sierra, Maria" action="https://www.instagram.com/gravitydusty/?hl=es"/>
 		</acme:menu-option>	
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
