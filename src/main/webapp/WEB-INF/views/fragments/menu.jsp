@@ -22,6 +22,10 @@
 			<acme:menu-suboption code="15455746E: Restoy Barrero, Joaquín" action="https://accounts.spotify.com/es-ES/status"/>
 		</acme:menu-option>	
 
+		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="49398962E: Márquez Sierra, María" action="https://www.instagram.com/gravitydusty/?hl=es"/>
+		</acme:menu-option>	
+		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
