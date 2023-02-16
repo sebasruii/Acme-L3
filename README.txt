@@ -18,4 +18,5 @@ account that you must link the appropriate version of the Acme-Framework excludi
 following resources:
 
 - **/fragments/**
- 
+
+Acme Life-Long Learning, Inc. (Acme L3, Inc. for short) is a fictitious company that specialises in helping learners get started on a variety of matters with the help of renowned lecturers. The goal of this project is to develop a WIS to help this organisation manage their business. The documents in this folder describe the requirements to fulfil.
