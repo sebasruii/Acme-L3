@@ -20,6 +20,7 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="15455746E: Restoy Barrero, Joaquín" action="https://accounts.spotify.com/es-ES/status"/>
+			<acme:menu-suboption code="54172162D: Pérez Romero, Lucía" action="https://stackoverflow.com/"/>
 		</acme:menu-option>	
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
