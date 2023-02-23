@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -43,6 +44,7 @@ public class Peep extends AbstractEntity {
 	@NotBlank
 	protected String			message;
 
+	@Email
 	protected String			email;
 
 	@URL
