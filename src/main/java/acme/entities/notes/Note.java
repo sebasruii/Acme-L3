@@ -27,7 +27,7 @@ public class Note extends AbstractEntity {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Atributes
-	@Temporal(TemporalType.TIME)
+	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull
 	protected Date				creation;
