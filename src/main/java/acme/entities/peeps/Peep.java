@@ -23,15 +23,15 @@ public class Peep {
 	@NotNull
 	protected Date				instantiation;
 
-	@Size(max = 76)
+	@Size(max = 75)
 	@NotBlank
 	protected String			title;
 
-	@Size(max = 76)
+	@Size(max = 75)
 	@NotBlank
 	protected String			nick;
 
-	@Size(max = 101)
+	@Size(max = 100)
 	@NotBlank
 	protected String			message;
 
