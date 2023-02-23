@@ -1,13 +1,13 @@
 
 package acme.entities.peeps;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
@@ -19,9 +19,9 @@ public class Peep {
 
 	// Attributes -------------------------------------------------------------
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@PastOrPresent
 	@NotNull
-	protected LocalDate			instantiation;
+	protected Date				instantiation;
 
 	@Size(max = 76)
 	@NotBlank
