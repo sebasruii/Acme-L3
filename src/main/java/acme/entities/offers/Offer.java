@@ -55,10 +55,10 @@ public class Offer extends AbstractEntity {
 	protected String			summary;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@FutureOrPresent
 	@NotNull
 	protected Date				availabilityInit;
-
+    
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	protected Date				availabilityFinish;
 
@@ -74,7 +74,7 @@ public class Offer extends AbstractEntity {
 	}
 
 
-	@NotNull
+	
 	@Positive
 	protected Integer	price;
 
