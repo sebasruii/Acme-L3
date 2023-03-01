@@ -24,11 +24,11 @@ import lombok.Setter;
 @Table(name = "practicum")
 public class Practicum extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
+	// Serialisation identifier ----------------------------------------------
 
 	protected static final long		serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Attributes ------------------------------------------------------------
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
 	protected String				code;
@@ -47,9 +47,9 @@ public class Practicum extends AbstractEntity {
 
 	protected Integer				estimedTotalTime;
 
-	// Derived attributes -----------------------------------------------------
+	// Derived attributes ----------------------------------------------------
 
-	// Relationships ----------------------------------------------------------
+	// Relationships ---------------------------------------------------------
 
 	@OneToMany(/* cascade = CascadeType.ALL, mappedBy = "practicumSession" */)
 	private List<PracticumSession>	practicumSessions;

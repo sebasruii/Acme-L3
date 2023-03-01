@@ -26,10 +26,10 @@ import lombok.Setter;
 @Table(name = "practicumSession")
 public class PracticumSession extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
+	// Serialisation identifier ----------------------------------------------
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Attributes ------------------------------------------------------------
 	@NotBlank
 	@Length(max = 75)
 	protected String			title;
@@ -58,9 +58,9 @@ public class PracticumSession extends AbstractEntity {
 		return result;
 	}
 
-	// Derived attributes -----------------------------------------------------
+	// Derived attributes ----------------------------------------------------
 
-	// Relationships ----------------------------------------------------------
+	// Relationships ---------------------------------------------------------
 
 
 	@ManyToOne()
