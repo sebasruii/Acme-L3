@@ -38,10 +38,6 @@ public class Offer extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	protected int				id;
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull
@@ -62,33 +58,14 @@ public class Offer extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	protected Date				availabilityFinish;
-
-
-	@Transient
-	public boolean availabilityIsValid() {
-		boolean result;
-		final Duration instantiatonAvaibilityInit = MomentHelper.computeDuration(this.instantiation, this.availabilityInit);
-		final Integer initLapse = instantiatonAvaibilityInit.compareTo(Duration.ofDays(1));
-		final Integer avaibilityLapse = this.duration().compareTo(Duration.ofDays(7));
-		result = initLapse >= 0 && avaibilityLapse >= 0;
-		return result;
-	}
-
-
 	
-	@Positive
+	@NotNull
 	protected Money	price;
 
 	@URL
 	protected String	link;
 
 	// Derived attributes -----------------------------------------------------
-
-
-	protected Duration duration() {
-		return MomentHelper.computeDuration(this.availabilityInit, this.availabilityFinish);
-
-	}
 
 	// Relationships ----------------------------------------------------------
 
