@@ -20,6 +20,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import acme.framework.helpers.MomentHelper;
 import lombok.Getter;
@@ -76,7 +77,7 @@ public class Offer extends AbstractEntity {
 
 	
 	@Positive
-	protected Integer	price;
+	protected Money	price;
 
 	@URL
 	protected String	link;
