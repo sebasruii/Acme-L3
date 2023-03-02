@@ -12,7 +12,7 @@ public class CompanyDashboard extends AbstractForm {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -----------------------------------------------------------
+	// Attributes ----------------------------------------------------------
 
 	private int					totalPracticums;
 	private double				avgSessionTime;
@@ -24,8 +24,8 @@ public class CompanyDashboard extends AbstractForm {
 	private double				minPracticumTime;
 	private double				maxPracticumTime;
 
-	// Derived attributes ---------------------------------------------------
+	// Derived attributes --------------------------------------------------
 
-	// Relationships --------------------------------------------------------
+	// Relationships -------------------------------------------------------
 
 }
