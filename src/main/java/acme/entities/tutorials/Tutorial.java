@@ -3,6 +3,7 @@ package acme.entities.tutorials;
 
 import java.sql.Time;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 public class Tutorial extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -29,29 +31,27 @@ public class Tutorial extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	protected int				id;
 
-	@NotBlank()
+	@Column(unique=true)
+	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
 	protected String			code;
 
-	@NotBlank()
+	@NotBlank
 	@Size(max = 75)
 	protected String			title;
 
-	@NotBlank()
+	@NotBlank
 	@Size(max = 100)
 	protected String			summary;
 
-	@NotBlank()
+	@NotBlank
 	@Size(max = 100)
 	protected String			goals;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Time				estimated_time;
+	protected Time				estimatedTime;
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
