@@ -42,6 +42,4 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 100)
 	protected ArrayList<String>	goals;
 
-	protected Integer			estimedTotalTime;
-
 }
