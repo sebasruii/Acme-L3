@@ -3,8 +3,8 @@ package acme.roles;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractRole;
@@ -21,15 +21,15 @@ public class Company extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
-	@Size(max = 75)
+	@Length(max = 75)
 	@NotBlank
 	protected String			name;
 
-	@Size(max = 25)
+	@Length(max = 25)
 	@NotBlank
 	protected String			VAT;
 
-	@Size(max = 100)
+	@Length(max = 100)
 	@NotBlank
 	protected String			summary;
 
