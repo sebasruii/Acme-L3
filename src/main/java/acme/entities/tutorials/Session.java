@@ -1,23 +1,19 @@
 
 package acme.entities.tutorials;
 
-import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.NatureType.NatureType;
 import acme.framework.data.AbstractEntity;
-import acme.framework.helpers.MomentHelper;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,20 +29,16 @@ public class Session extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	protected int				id;
-
-	@NotBlank()
-	@Size(max = 75)
+	@NotBlank
+	@Length(max = 75)
 	protected String			title;
 
-	@NotBlank()
-	@Size(max = 100)
+	@NotBlank
+	@Length(max = 100)
 	protected String			summary;
 
 	@NotNull
-	protected TypeSession		type;
+	protected NatureType		type;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
@@ -61,11 +53,6 @@ public class Session extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	protected Duration duration() {
-		return MomentHelper.computeDuration(this.sessionInit, this.sessionFinish);
-
-	}
 	// Relationships ----------------------------------------------------------
 
 }
