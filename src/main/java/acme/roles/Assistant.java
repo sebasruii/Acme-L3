@@ -1,20 +1,15 @@
 
 package acme.roles;
 
-import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractRole;
-import lombok.Getter;
-import lombok.Setter;
 
-@Entity
-@Getter
-@Setter
-public class Company extends AbstractRole {
+public class Assistant extends AbstractRole {
+
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
@@ -23,11 +18,11 @@ public class Company extends AbstractRole {
 
 	@Length(max = 75)
 	@NotBlank
-	protected String			name;
+	protected String			supervisor;
 
-	@Length(max = 25)
+	@Length(max = 100)
 	@NotBlank
-	protected String			VAT;
+	protected String			expertiseFields;
 
 	@Length(max = 100)
 	@NotBlank
