@@ -2,7 +2,9 @@
 package acme.entities.practicums;
 
 import java.util.ArrayList;
+
 import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -27,6 +29,7 @@ public class Practicum extends AbstractEntity {
 
 	protected static final long		serialVersionUID	= 1L;
 
+
 	// Attributes ------------------------------------------------------------
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}\\d\\d{3}")
@@ -40,6 +43,7 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 100)
 	protected String				summary;
 
+
 	@NotBlank
 	@Length(max = 100)
 	protected ArrayList<String>		goals;
@@ -47,6 +51,5 @@ public class Practicum extends AbstractEntity {
 	// Derived attributes ----------------------------------------------------
 
 	// Relationships ---------------------------------------------------------
-
 
 }
