@@ -4,7 +4,8 @@ package acme.entities.audits;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -22,15 +23,15 @@ public class Audit extends AbstractEntity {
 	protected String			code;
 
 	@NotBlank(message = "Conclusion cannot be blank")
-	@Size(max = 100, message = "Conclusion must be shorter than 101 characters")
+	@Length(max = 100, message = "Conclusion must be shorter than 101 characters")
 	protected String			conclusion;
 
 	@NotBlank(message = "Strong points cannot be blank")
-	@Size(max = 100, message = "Strong points must be shorter than 101 characters")
+	@Length(max = 100, message = "Strong points must be shorter than 101 characters")
 	protected String			strongPoints;
 
 	@NotBlank(message = "Weak points cannot be blank")
-	@Size(max = 100, message = "Weak points must be shorter than 101 characters")
+	@Length(max = 100, message = "Weak points must be shorter than 101 characters")
 	protected String			weakPoints;
 
 	protected int				mark;
