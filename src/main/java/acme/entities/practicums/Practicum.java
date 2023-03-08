@@ -27,15 +27,15 @@ public class Practicum extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 	@Column(unique=true)
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}\\d\\d{3}")
 	protected String			code;
 
 	@NotBlank
-	@Size(max = 75)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Size(max = 100)
+	@Length(max = 100)
 	protected String			summary;
 
 	@NotBlank
