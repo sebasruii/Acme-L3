@@ -2,6 +2,7 @@
 package acme.entities.lectures;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -9,6 +10,7 @@ import javax.validation.constraints.Positive;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.courses.Course
 import acme.entities.NatureType.NatureType;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -45,4 +47,8 @@ public class Lecture extends AbstractEntity {
 
 	@URL
 	protected String			moreInfo;
+
+	// Relationships
+	@ManyToOne
+	protected Course			course;
 }
