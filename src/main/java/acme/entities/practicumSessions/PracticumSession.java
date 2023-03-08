@@ -23,7 +23,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "practicumSession")
 public class PracticumSession extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------------
@@ -38,25 +37,17 @@ public class PracticumSession extends AbstractEntity {
 	@Length(max = 100)
 	protected String			sumary;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected LocalDate			startDate;
+	protected Date			startDate;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected LocalDate			finishDate;
+	protected Date			finishDate;
 
 	@URL
 	protected String			link;
 
-
-	@Transient
-	public boolean IsValid() {
-		boolean result = false;
-		final Period period1 = Period.between(this.finishDate, this.startDate);
-		final Period period2 = Period.between(this.startDate, LocalDate.now());
-		if (period1.getDays() >= 7 && period2.getDays() >= 7)
-			result = true;
-		return result;
-	}
 
 	// Derived attributes ----------------------------------------------------
 
@@ -64,7 +55,6 @@ public class PracticumSession extends AbstractEntity {
 
 
 	@ManyToOne()
-	@JoinColumn(name = "practicum_id")
 	private Practicum practicum;
 
 }
