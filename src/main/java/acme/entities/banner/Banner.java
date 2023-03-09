@@ -6,13 +6,12 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-import org.hibernate.validator.constraints.time.DurationMin;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -34,18 +33,23 @@ public class Banner extends AbstractEntity {
 	protected Date				instantiation;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future
-	@DurationMin(days = 7)
-	protected Date				visualizationPeriod;
+	@NotNull
+	protected Date				periodInit;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				periodFinish;
 
 	@URL
+	@NotBlank
 	protected String			imageLink;
 
 	@NotBlank
-	@Size(max = 76)
+	@Length(max = 75)
 	protected String			slogan;
 
 	@URL
+	@NotBlank
 	protected String			webDoc;
 
 }
