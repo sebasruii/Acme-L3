@@ -1,5 +1,5 @@
 
-package acme.entities.student;
+package acme.roles;
 
 import java.util.List;
 
