@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractEntity;
@@ -25,15 +25,15 @@ public class Student extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Size(max = 75)
+	@Length(max = 75)
 	protected String			statement;
 
 	@NotBlank
-	@Size(max = 100)
+	@Length(max = 100)
 	private List<String>		strongFeatures;
 
 	@NotBlank
-	@Size(max = 100)
+	@Length(max = 100)
 	private List<String>		weakFeatures;
 
 	@URL
