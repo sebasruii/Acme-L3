@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
+import javax.validation.Valid;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
@@ -54,7 +54,8 @@ public class PracticumSession extends AbstractEntity {
 	// Relationships ---------------------------------------------------------
 
 
-	@ManyToOne()
+	@ManyToOne(optional=false)
+	@Valid
 	private Practicum practicum;
 
 }
