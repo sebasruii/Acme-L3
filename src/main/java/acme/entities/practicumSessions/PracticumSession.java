@@ -1,9 +1,6 @@
 
 package acme.entities.practicumSessions;
 
-import java.time.LocalDate;
-import java.time.Period;
-
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,7 +11,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.Valid;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import acme.entities.practicums.Practicum;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
