@@ -19,6 +19,6 @@ public class AdministratorDashboard extends AbstractForm {
 
 	private Map<Money, Statistic>	offerBudgetByCurrency;
 
-	private Statistic				notesInLast10WeeksData;
+	private Statistic				notesInLast10Weeks;
 
 }
