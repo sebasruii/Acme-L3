@@ -32,8 +32,9 @@ public class Practicum extends AbstractEntity {
 
 	// Attributes ------------------------------------------------------------
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}\\d\\d{3}")
-	protected String				code;
+	@Pattern(regexp = "^[A-Z]{1,3}\\d\\d{3}$")
+	protected String			code;
+
 
 	@NotBlank
 	@Length(max = 75)
@@ -46,10 +47,8 @@ public class Practicum extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected ArrayList<String>		goals;
+	protected String	goals;
 
-	// Derived attributes ----------------------------------------------------
 
-	// Relationships ---------------------------------------------------------
 
 }
