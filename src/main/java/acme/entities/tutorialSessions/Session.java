@@ -1,5 +1,5 @@
 
-package acme.entities.sessions;
+package acme.entities.tutorialSessions;
 
 import java.util.Date;
 
@@ -56,6 +56,7 @@ public class Session extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@ManyToOne
+	@NotNull
+	@ManyToOne(optional = false)
 	protected Tutorial			tutorial;
 }
