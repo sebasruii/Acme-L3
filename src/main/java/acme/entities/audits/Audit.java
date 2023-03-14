@@ -1,16 +1,18 @@
 
 package acme.entities.audits;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.courses.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Auditor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,26 +21,33 @@ import lombok.Setter;
 @Setter
 public class Audit extends AbstractEntity {
 
-	protected static final long		serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	@NotBlank()
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
-	protected String				code;
-
-	@NotBlank()
-	@Length(max = 100)
-	protected String				conclusion;
+	@Pattern(regexp = "^[A-Z]{1,3}\\\\d{3}$")
+	protected String			code;
 
 	@NotBlank()
 	@Length(max = 100)
-	protected String				strongPoints;
+	protected String			conclusion;
 
 	@NotBlank()
 	@Length(max = 100)
-	protected String				weakPoints;
+	protected String			strongPoints;
 
-	protected int					mark;
+	@NotBlank()
+	@Length(max = 100)
+	protected String			weakPoints;
 
-	@OneToMany
-	protected List<AuditingRecord>	auditingRecords;
+	protected int				mark;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Course			course;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Auditor			auditor;
 }

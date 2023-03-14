@@ -45,8 +45,8 @@ public class AuditingRecord extends AbstractEntity {
 	@DurationMin(hours = 1)
 	protected Date				periodEnd;
 
-	@Valid
 	@NotNull
+	@Valid
 	@ManyToOne(optional = false)
 	protected Audit				audit;
 
