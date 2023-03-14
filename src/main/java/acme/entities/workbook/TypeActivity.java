@@ -1,5 +1,5 @@
 
-package acme.entities.activities;
+package acme.entities.workbook;
 
 public enum TypeActivity {
 
