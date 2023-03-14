@@ -1,5 +1,5 @@
 
-package acme.form;
+package acme.forms;
 
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
@@ -15,14 +15,8 @@ public class CompanyDashboard extends AbstractForm {
 	// Attributes ----------------------------------------------------------
 
 	private int					totalPracticums;
-	private double				avgSessionTime;
-	private double				devSessionTime;
-	private double				minSessionTime;
-	private double				maxSessionTime;
-	private double				avgPracticumTime;
-	private double				devPracticumTime;
-	private double				minPracticumTime;
-	private double				maxPracticumTime;
+	private Statistics			practicumSessionStatistics;
+	private Statistics			practicumStatistics;
 
 	// Derived attributes --------------------------------------------------
 
