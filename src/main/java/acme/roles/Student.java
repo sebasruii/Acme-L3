@@ -1,8 +1,6 @@
 
 package acme.roles;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
@@ -30,11 +28,11 @@ public class Student extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	private List<String>		strongFeatures;
+	private String				strongFeatures;
 
 	@NotBlank
 	@Length(max = 100)
-	private List<String>		weakFeatures;
+	private String				weakFeatures;
 
 	@URL
 	protected String			information;
