@@ -17,14 +17,8 @@ public class StudentDashboard extends AbstractForm {
 
 	private Integer				totalActivities;
 
-	private Double				avgActivityTime;
-	private Double				devActivityTime;
-	private Double				minActivityTime;
-	private Double				maxActivityTime;
+	private Statistic			ActivityTime;
 
-	private Double				avgLearningTime;
-	private Double				devLearningTime;
-	private Double				minLearningTime;
-	private Double				maxLearningTime;
+	private Statistic			LearningTime;
 
 }
