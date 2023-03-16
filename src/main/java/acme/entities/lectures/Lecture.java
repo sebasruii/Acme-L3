@@ -4,7 +4,6 @@ package acme.entities.lectures;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -32,7 +31,6 @@ public class Lecture extends AbstractEntity {
 	protected String			lectureAbstract;
 
 	// In hours
-	@Positive
 	@NotNull
 	protected Double			estimatedLearningTime;
 
