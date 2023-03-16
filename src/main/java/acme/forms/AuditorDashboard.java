@@ -8,7 +8,7 @@ public class AuditorDashboard extends AbstractForm {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	private Integer				totalNumAudits;
+	private int					totalNumAudits;
 
 	// Average, deviation, minimum, and maximum number of auditing records in audits.
 	private Statistic			audits;
