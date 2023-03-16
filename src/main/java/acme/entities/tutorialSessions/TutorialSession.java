@@ -23,7 +23,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Session extends AbstractEntity {
+public class TutorialSession extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
