@@ -15,7 +15,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-import org.hibernate.validator.constraints.time.DurationMin;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -28,33 +27,28 @@ public class AuditingRecord extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@NotBlank(message = "Subject cannot be blank")
-	@Length(max = 75, message = "Subject must be shorter than 76 characters")
+	@NotBlank()
+	@Length(max = 75)
 	protected String			subject;
 
-	@NotBlank(message = "Assessment cannot be blank")
-	@Length(max = 100, message = "Assessment must be shorter than 101 characters")
+	@NotBlank()
+	@Length(max = 100)
 	protected String			assessment;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	protected Date				periodStart;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
-	@DurationMin(hours = 1)
-	protected Date				periodEnd;
+	@NotNull
+	protected Date				auditingDate;
 
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
 	protected Audit				audit;
 
-	@NotBlank(message = "Mark cannot be blank")
-	@Pattern(regexp = "A\\+?|B|C|F-?", message = "Mark must be one of 'A+', 'A', 'B', 'C', 'F', or 'F-'")
+	@NotBlank()
+	@Pattern(regexp = "A\\+?|B|C|F-?")
 	protected String			mark;
 
 	@URL
 	protected String			link;
-
 }
