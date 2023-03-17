@@ -28,7 +28,7 @@ public class Lecture extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			lectureAbstract;
+	protected String			summary;
 
 	// In hours
 	@NotNull
@@ -42,5 +42,5 @@ public class Lecture extends AbstractEntity {
 	protected NatureType		lectureType;
 
 	@URL
-	protected String			moreInfo;
+	protected String			link;
 }
