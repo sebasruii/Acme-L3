@@ -1,16 +1,19 @@
 
 package acme.entities.practicumSessions;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.Valid;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
-import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
+
 import acme.entities.practicums.Practicum;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -31,28 +34,26 @@ public class PracticumSession extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			sumary;
+	protected String			summary;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date			startDate;
+	protected Date				startDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date			finishDate;
+	protected Date				finishDate;
 
 	@URL
 	protected String			link;
-
 
 	// Derived attributes ----------------------------------------------------
 
 	// Relationships ---------------------------------------------------------
 
-
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	private Practicum practicum;
+	private Practicum			practicum;
 
 }

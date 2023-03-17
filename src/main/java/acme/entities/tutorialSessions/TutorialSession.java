@@ -45,11 +45,11 @@ public class TutorialSession extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				sessionInit;
+	protected Date				startDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				sessionFinish;
+	protected Date				finishDate;
 
 	@URL
 	protected String			link;

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -21,7 +22,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class WorkBook extends AbstractEntity {
+
+public class Activity extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -35,24 +37,26 @@ public class WorkBook extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			sumary;
+	protected String			summary;
 
 	@NotNull
-	protected TypeActivity		typeActivity;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				periodInit;
+	protected TypeActivity		activityType;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				periodFinish;
+	protected Date				startDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				finishDate;
 
 	@URL
-	protected String			optionalnfo;
+	protected String			link;
 
 	// Relationships ---------------------------------------------------------
-	@ManyToOne
+	@Valid
+	@NotNull
+	@ManyToOne(optional = false)
 	protected Enrolment			enrolment;
 
 }

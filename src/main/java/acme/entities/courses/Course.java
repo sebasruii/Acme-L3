@@ -39,13 +39,13 @@ public class Course extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			courseAbstract;
+	protected String			summary;
 
 	@NotNull
 	protected Money				price;
 
 	@URL
-	protected String			moreInfo;
+	protected String			link;
 
 	@NotNull
 	@ManyToOne(optional = false)
