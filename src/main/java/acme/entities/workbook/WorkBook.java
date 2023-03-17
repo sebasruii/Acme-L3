@@ -1,9 +1,10 @@
 
-package acme.entities.sessions;
+package acme.entities.workbook;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.NatureType.NatureType;
+import acme.entities.enrolment.Enrolment;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-
-public class Session extends AbstractEntity {
+public class WorkBook extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -35,24 +35,24 @@ public class Session extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary;
+	protected String			sumary;
 
 	@NotNull
-	protected NatureType		type;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				sessionInit;
+	protected TypeActivity		typeActivity;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				sessionFinish;
+	protected Date				periodInit;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				periodFinish;
 
 	@URL
-	protected String			link;
+	protected String			optionalnfo;
 
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
+	// Relationships ---------------------------------------------------------
+	@ManyToOne
+	protected Enrolment			enrolment;
 
 }

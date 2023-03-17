@@ -17,16 +17,16 @@ import lombok.Setter;
 public class Auditor extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
-	@NotBlank(message = "Firm cannot be blank")
-	@Length(max = 75, message = "Firm name must be shorter than 76 characters")
+	@NotBlank()
+	@Length(max = 75)
 	protected String			firm;
 
-	@NotBlank(message = "Professional ID cannot be blank")
-	@Length(max = 25, message = "Professional ID must be shorter than 26 characters")
+	@NotBlank()
+	@Length(max = 25)
 	protected String			professionalId;
 
-	@NotBlank(message = "Certifications cannot be blank")
-	@Length(max = 100, message = "Certifications must be shorter than 101 characters")
+	@NotBlank()
+	@Length(max = 100)
 	protected String			certifications;
 
 	@URL
