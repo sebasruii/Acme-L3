@@ -1,0 +1,14 @@
+key,supervisor,expertiseFields,summary,link
+assistant-01,s,expertiseFields1,summary1,https:\\www.lecture-01.com
+assistant-02,su,expertiseFields1,summary1,https:\\www.lecture-01.com
+assistant-03,this is a supervisor with a 74 character long name to test ppppppppppppppp,expertiseFields1,summary1,https:\\www.lecture-01.com
+assistant-04,this is a supervisor with a 75 character long name to test pppppppppppppppp,expertiseFields1,summary1,https:\\www.lecture-01.com
+assistant-05,supervisor1,e,summary1,https:\\www.lecture-01.com
+assistant-06,supervisor1,ex,summary1,https:\\www.lecture-01.com
+assistant-07,supervisor1,this is a expertiseFields with a 99 character to test ppppppppppppppppppppppppppppppppppppppppppppp,summary1,https:\\www.lecture-01.com
+assistant-08,supervisor1,this is a expertiseFields with a 100 character to test ppppppppppppppppppppppppppppppppppppppppppppp,summary1,https:\\www.lecture-01.com
+assistant-10,supervisor1,expertiseFields1,s,https:\\www.lecture-01.com
+assistant-10,supervisor1,expertiseFields1,su,https:\\www.lecture-01.com
+assistant-09,supervisor1,expertiseFields1,this is a summary with a 99 character to test ppppppppppppppppppppppppppppppppppppppppppppppppppppp,https:\\www.lecture-01.com
+assistant-10,supervisor1,expertiseFields1,this is a summary with a 100 character to test ppppppppppppppppppppppppppppppppppppppppppppppppppppp,https:\\www.lecture-01.com
+assistant-10,supervisor1,expertiseFields1,summary1,https:\\www.lecture-01.com
