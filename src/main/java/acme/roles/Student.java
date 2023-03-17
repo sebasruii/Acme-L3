@@ -1,14 +1,12 @@
 
-package acme.entities.lectures;
+package acme.roles;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.NatureType.NatureType;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,31 +14,26 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Lecture extends AbstractEntity {
+public class Student extends AbstractEntity {
+
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes
+	// Attributes -------------------------------------------------------------
+
 	@NotBlank
 	@Length(max = 75)
-	protected String			title;
+	protected String			statement;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			lectureAbstract;
-
-	// In hours
-	@NotNull
-	protected Double			estimatedLearningTime;
+	private String				strongFeatures;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			body;
-
-	@NotNull
-	protected NatureType		lectureType;
+	private String				weakFeatures;
 
 	@URL
-	protected String			moreInfo;
+	protected String			information;
 }
