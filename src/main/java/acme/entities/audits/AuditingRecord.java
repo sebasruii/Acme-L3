@@ -37,16 +37,20 @@ public class AuditingRecord extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	@NotNull
-	protected Date				auditingDate;
+	protected Date				startDate;
 
-	@Valid
+	@Temporal(TemporalType.TIMESTAMP)
+	@PastOrPresent
+	@DurationMin(hours = 1)
+	protected Date				finishDate;
+
 	@NotNull
+	@Valid
 	@ManyToOne(optional = false)
 	protected Audit				audit;
 
 	@NotBlank()
-	@Pattern(regexp = "A\\+?|B|C|F-?")
+	@Pattern(regexp = "^A\\+?|B|C|F-?$")
 	protected String			mark;
 
 	@URL
