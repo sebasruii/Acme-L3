@@ -5,7 +5,6 @@ import java.util.Map;
 
 import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractForm;
-import acme.forms.Statistic
 
 public class AdministratorDashboard extends AbstractForm {
 
@@ -17,8 +16,8 @@ public class AdministratorDashboard extends AbstractForm {
 
 	private Double					bulletinsRatio;
 
-	private Map<Money, Statistic>	offerBudgetByCurrency;
+	private Map<Money, Statistics>	offerBudgetByCurrency;
 
-	private Statistic				notesInLast10Weeks;
+	private Statistics				notesInLast10Weeks;
 
 }
