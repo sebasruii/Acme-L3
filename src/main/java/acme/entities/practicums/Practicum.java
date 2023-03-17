@@ -7,15 +7,15 @@ import java.util.List;
 
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
+import javax.validation.Valid;
 import org.hibernate.validator.constraints.Length;
 
-import acme.entities.practicumSessions.PracticumSession;
+import acme.roles.Company;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +32,7 @@ public class Practicum extends AbstractEntity {
 
 	// Attributes ------------------------------------------------------------
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{1,3}\\d{4}$")
+	@Pattern(regexp = "^[A-Z]{1,3}\\d{4}$", message="{validation.code1}")
 	protected String			code;
 
 
@@ -48,6 +48,11 @@ public class Practicum extends AbstractEntity {
 	@NotBlank
 	@Length(max = 100)
 	protected String	goals;
+
+	@ManyToOne(optional=false)
+	@NotNull
+	@Valid
+	protected Company company;
 
 
 
