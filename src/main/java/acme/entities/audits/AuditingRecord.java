@@ -51,7 +51,7 @@ public class AuditingRecord extends AbstractEntity {
 	protected Audit				audit;
 
 	@NotBlank()
-	@Pattern(regexp = "A\\+?|B|C|F-?")
+	@Pattern(regexp = "^A\\+?|B|C|F-?$")
 	protected String			mark;
 
 	@URL
