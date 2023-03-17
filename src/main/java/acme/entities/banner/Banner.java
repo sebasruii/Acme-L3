@@ -34,11 +34,11 @@ public class Banner extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				periodInit;
+	protected Date				startDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				periodFinish;
+	protected Date				finishDate;
 
 	@URL
 	@NotBlank
@@ -50,6 +50,6 @@ public class Banner extends AbstractEntity {
 
 	@URL
 	@NotBlank
-	protected String			webDoc;
+	protected String			link;
 
 }

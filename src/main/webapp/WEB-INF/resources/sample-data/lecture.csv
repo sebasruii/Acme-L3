@@ -1,4 +1,4 @@
-key,title,lecture-abstract,estimated-learning-time,body,lecture-type,more-info
+key,title,summary,estimated-learning-time,body,lecture-type,link
 lecture-01,lecture-title-01,lecture-abstract-01,2.5,lecture-body-01,THEORY,https:\\www.lecture-01.com
 lecture-02,l,lecture-abstract-01,2.5,lecture-body-01,THEORY,https:\\www.lecture-01.com
 lecture-03,le,lecture-abstract-01,2.5,lecture-body-01,THEORY,https:\\www.lecture-01.com

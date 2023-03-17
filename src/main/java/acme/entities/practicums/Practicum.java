@@ -35,7 +35,7 @@ public class Practicum extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			abstractPracticum;
+	protected String			summary;
 
 	@NotBlank
 	@Length(max = 100)

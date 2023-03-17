@@ -35,5 +35,5 @@ public class Student extends AbstractEntity {
 	private String				weakFeatures;
 
 	@URL
-	protected String			information;
+	protected String			link;
 }
