@@ -1,18 +1,21 @@
 
-package acme.entities.banner;
+package acme.entities.tutorialSessions;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.NatureType.NatureType;
+import acme.entities.tutorials.Tutorial;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +23,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
+
+public class TutorialSession extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,28 +32,33 @@ public class Banner extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
-	protected Date				instantiation;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				periodInit;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				periodFinish;
-
-	@URL
-	@NotBlank
-	protected String			imageLink;
-
 	@NotBlank
 	@Length(max = 75)
-	protected String			slogan;
+	protected String			title;
+
+	@NotBlank
+	@Length(max = 100)
+	protected String			summary;
+
+	@NotNull
+	protected NatureType		type;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				sessionInit;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				sessionFinish;
 
 	@URL
-	@NotBlank
-	protected String			webDoc;
+	protected String			link;
 
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Tutorial			tutorial;
 }

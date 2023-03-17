@@ -1,5 +1,5 @@
 
-package acme.entities.enrolment;
+package acme.entities.tutorials;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,43 +13,47 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.courses.Course;
 import acme.framework.data.AbstractEntity;
-import acme.roles.Student;
+import acme.roles.Assistant;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Enrolment extends AbstractEntity {
+public class Tutorial extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{1,3}//d{3}$")
+	@Pattern(regexp = "^[A-Z]{1,3}\\d{4}$")
 	protected String			code;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			motivation;
+	protected String			title;
+
+	@NotBlank
+	@Length(max = 100)
+	protected String			summary;
 
 	@NotBlank
 	@Length(max = 100)
 	protected String			goals;
 
-	// Relationships ---------------------------------------------------------
+	// Derived attributes -----------------------------------------------------
 
+	// Relationships ----------------------------------------------------------
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	@ManyToOne(optional = false)
-	protected Student			student;
-
-	@Valid
-	@NotNull
-	@ManyToOne(optional = false)
 	protected Course			course;
+
+	@ManyToOne(optional = false)
+	@Valid
+	@NotNull
+	protected Assistant			assistant;
 }

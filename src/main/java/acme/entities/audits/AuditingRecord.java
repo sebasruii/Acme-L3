@@ -1,17 +1,21 @@
 
-package acme.entities.banner;
+package acme.entities.audits;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
+import org.hibernate.validator.constraints.time.DurationMin;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -20,36 +24,37 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
-
-	// Serialisation identifier -----------------------------------------------
+public class AuditingRecord extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	@NotBlank()
+	@Length(max = 75)
+	protected String			subject;
+
+	@NotBlank()
+	@Length(max = 100)
+	protected String			assessment;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	protected Date				instantiation;
+	protected Date				periodStart;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				periodInit;
+	@PastOrPresent
+	@DurationMin(hours = 1)
+	protected Date				periodEnd;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Valid
 	@NotNull
-	protected Date				periodFinish;
+	@ManyToOne(optional = false)
+	protected Audit				audit;
+
+	@NotBlank()
+	@Pattern(regexp = "A\\+?|B|C|F-?")
+	protected String			mark;
 
 	@URL
-	@NotBlank
-	protected String			imageLink;
-
-	@NotBlank
-	@Length(max = 75)
-	protected String			slogan;
-
-	@URL
-	@NotBlank
-	protected String			webDoc;
+	protected String			link;
 
 }
