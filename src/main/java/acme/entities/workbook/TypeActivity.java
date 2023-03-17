@@ -3,5 +3,5 @@ package acme.entities.workbook;
 
 public enum TypeActivity {
 
-	THEORY, HANDSON
+	THEORY, HANDS_ON
 }

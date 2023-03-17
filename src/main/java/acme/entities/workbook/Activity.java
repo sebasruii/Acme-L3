@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class WorkBook extends AbstractEntity {
+public class Activity extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -35,10 +35,10 @@ public class WorkBook extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			sumary;
+	protected String			summary;
 
 	@NotNull
-	protected TypeActivity		typeActivity;
+	protected TypeActivity		activityType;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
