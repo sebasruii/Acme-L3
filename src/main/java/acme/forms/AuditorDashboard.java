@@ -1,7 +1,6 @@
 
 package acme.forms;
 
-import acme.forms.Statistic;
 import acme.framework.data.AbstractForm;
 
 public class AuditorDashboard extends AbstractForm {
@@ -11,8 +10,8 @@ public class AuditorDashboard extends AbstractForm {
 	private int					totalNumAudits;
 
 	// Average, deviation, minimum, and maximum number of auditing records in audits.
-	private Statistic			audits;
+	private Statistics			audits;
 
 	// Average, deviation, minimum, and maximum time of auditing records.
-	private Statistic			auditRecs;
+	private Statistics			auditRecs;
 }
